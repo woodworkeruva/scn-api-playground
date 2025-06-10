@@ -1,0 +1,23 @@
+{
+	"name": "scn-api-playground",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"deploy": "npm run db:migrations:apply && wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+                "db:migrations:apply": "wrangler d1 migrations apply DB --remote",
+		"cf-typegen": "wrangler types"
+	},
+"dependencies": {
+    "chanfana": "^2.8.0",
+    "hono": "^4.7.9",
+    "zod": "^3.24.4"
+},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20250506.0",
+		"@types/node": "22.13.0",
+		"@types/service-worker-mock": "^2.0.4",
+		"wrangler": "^4.14.1"
+	}
+}
